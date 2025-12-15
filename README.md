@@ -17,7 +17,7 @@ Internet → Cloudflare CDN → NGINX Proxy (Port 80) → Docker Containers
 
 ```
 lephianhdev-infras/
-├── docker-compose.yml
+├── docker compose.yml
 ├── nginx.conf
 └── conf.d/
     ├── client_max_body_size.conf
@@ -95,8 +95,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 ```bash
 git clone https://github.com/lephianhdev/infras.git
 cd infras
-docker-compose up -d
-docker-compose logs -f
+docker compose up -d
+docker compose logs -f
 ```
 
 ### 2. Deploy App
@@ -149,7 +149,7 @@ User → Cloudflare (cache, SSL, CF-Connecting-IP)
 
 1. **Network:** Internal services dùng separate networks
 2. **Variables:** Luôn set `VIRTUAL_HOST`, specify `VIRTUAL_PORT` nếu cần
-3. **Logging:** Auto-rotate, monitor định kỳ với `docker-compose logs`
+3. **Logging:** Auto-rotate, monitor định kỳ với `docker compose logs`
 4. **Security:** Dùng Cloudflare SSL "Full" mode, update Cloudflare IPs định kỳ
 5. **Performance:** Tăng `worker_connections` nếu traffic cao, enable Cloudflare cache
 
